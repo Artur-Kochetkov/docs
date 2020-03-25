@@ -13,8 +13,8 @@ Let’s say you want to implement a new button “Deposit 100 EUR now” from yo
 
 In this case we fixate the cryptocurrency rates for a short period time and set the exact amount in cryptocurrency to the user. The implementation of this function has two steps:
 
-1.  [Requesting info concerning the rates for the futures](https://docs.coinspaid.com/docs/api-documentation/v2#calculate-rates-for-futures): You get the current exchange rates for the specified address according to the currency pairs linked to this address and different available amount ranges. These rates will be fixated for 10 minutes from "ts\_fixed" to "ts\_release" \(timestamp format\) time period.
-2.  [Requesting info concerning a confirmation of the futures transaction](https://docs.coinspaid.com/docs/api-documentation/v2#confirm-futures-transaction): At this step you define the amount in a fiat currency that you want to accept from the user and get the exact amount of the cryptocurrency that the user needs to send within the mentioned time period from "ts\_fixed" to "ts\_release" \(timestamp format\).
+1. [Requesting info concerning the rates for the futures](https://docs.coinspaid.com/docs/api-documentation/v2#calculate-rates-for-futures): You get the current exchange rates for the specified address according to the currency pairs linked to this address and different available amount ranges. These rates will be fixated for 10 minutes from "ts\_fixed" to "ts\_release" \(timestamp format\) time period.
+2. [Requesting info concerning a confirmation of the futures transaction](https://docs.coinspaid.com/docs/api-documentation/v2#confirm-futures-transaction): At this step you define the amount in a fiat currency that you want to accept from the user and get the exact amount of the cryptocurrency that the user needs to send within the mentioned time period from "ts\_fixed" to "ts\_release" \(timestamp format\).
 
 If the user deposits mentioned amount within set time period you will receive exactly 100 EUR. If the user fails to do so, the exchange process uses currently actual cryptocurrency rates.
 

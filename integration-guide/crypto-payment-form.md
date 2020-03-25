@@ -68,7 +68,7 @@ If the user has the crypto wallet application on the same device, they should:
 5. Click a "Send" button to transfer their funds
 
 {% hint style="danger" %}
-The more actions a user has to ****make the more probable it is that they will not pay. That is why **the crypto address has to be presented at least as a clickable link** using a specific URI format \(see the [What is a crypto wallet URI format?](https://docs.coinspaid.com/docs/faq/qr-codes-implementation#QRcodeimplementation-WhatisacryptowalletURIformat?) section\).
+The more actions a user has to **\*\*make the more probable it is that they will not pay. That is why** the crypto address has to be presented at least as a clickable link\*\* using a specific URI format \(see the [What is a crypto wallet URI format?](https://docs.coinspaid.com/docs/faq/qr-codes-implementation#QRcodeimplementation-WhatisacryptowalletURIformat?) section\).
 {% endhint %}
 
 ## What is a QR code? <a id="QRcodeimplementation-WhatisaQRcode?"></a>
@@ -77,7 +77,7 @@ A QR code \(Quick Response code\) is a special visual method of data encoding an
 
 An example of QR code:
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image-8.png)
 
 ## Why should I use QR codes on my payment form? <a id="QRcodeimplementation-WhyshouldIuseQRcodesonmypaymentform?"></a>
 
@@ -117,7 +117,7 @@ You can use this link directly inside the &lt;img&gt; tag:
 <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=bitcoin:3AFaCnqriLNxj15kqtp5Pxn8puHfuqbX7W&choe=UTF-8">
 ```
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](https://github.com/Artur-Kochetkov/docs/tree/fb34eaa3b3c88b26e4a577fa3445b8e6e2cf118b/.gitbook/assets/image%20%2813%29.png)
 
 **chs** - QR code size \("150x150" size is used as an example\)  
 **cht** - chart type \(**"qr" is necessary for QR code**\)  
@@ -151,6 +151,4 @@ To make this experience even better, it will be a good idea to provide the payme
 As a result created form may look like this:
 
 ![](../.gitbook/assets/deposit-or-bitstarz.com-2019-10-04-15-31-35.png)
-
-
 

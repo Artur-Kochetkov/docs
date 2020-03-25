@@ -71,11 +71,11 @@ Unique foreign ID in your system, example: "**164**"
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="url\_success" type="string" required=true %}
-URL on which we redirect the user in case of a successful invoice payment, example: **“https://merchant.name.com/url\_success“**
+URL on which we redirect the user in case of a successful invoice payment, example: **“**https://merchant.name.com/url\_success“
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="url\_failed" type="string" required=true %}
-URL on which we redirect the user in case of an unsuccessful invoice payment, example: **“https://merchant.name.com/url\_failed“**
+URL on which we redirect the user in case of an unsuccessful invoice payment, example: **“**https://merchant.name.com/url\_failed“
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="email\_user" type="string" required=false %}
@@ -128,7 +128,7 @@ Example of response with errors
 
 ## Invoice Type
 
-### **1st Type** 
+### **1st Type**
 
 #### Invoice without restriction of payment time
 
@@ -177,7 +177,7 @@ After confirming the currency and putting email, the rate will be fixed for 15 m
 
 ### **2nd Type**
 
-#### Invoice with time restriction 
+#### Invoice with time restriction
 
 This invoice type allows the user to choose the payment currency themselves, but the time restriction will be 15 minutes starting from the invoice creation.
 
@@ -220,9 +220,9 @@ By following the link the user will see the information about the invoice, timer
 
 After confirming the currency and inputting the email, the user has to pay the invoice using the specified address before the expiry of the timer.
 
-![](../../.gitbook/assets/004%20%282%29.png)
+![](../../.gitbook/assets/004-2.png)
 
-###  **3rd Type** 
+### **3rd Type**
 
 #### Invoice with time restriction and without the possibility to choose payment currency
 
@@ -268,7 +268,7 @@ By following the link the user will see the information about the invoice, 15 mi
 
 After inputting the email, the user has to pay the invoice using the specified address before the expiry of the timer.
 
-![](../../.gitbook/assets/004%20%284%29.png)
+![](../../.gitbook/assets/004-4.png)
 
 ## Invoice failed
 
