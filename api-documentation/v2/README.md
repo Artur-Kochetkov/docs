@@ -11,34 +11,34 @@ description: >-
 API endpoint for all requests is:
 
 ```text
-https://app.coinspaid.com/api/v2
+https://app.alphapo.net/api/v2
 ```
 
 ### Deposit flow
 
-1. You obtain new address from CoinsPaid API \(for some currencies it may be address and tag\) and store it somewhere on your side. After that you show this address to your customer in order to make a deposit.
+1. You obtain new address from AlphaPo API \(for some currencies it may be address and tag\) and store it somewhere on your side. After that you show this address to your customer in order to make a deposit.
 2. Customer sends some funds to this address.  
-3. When transaction is sent by a customer - CoinsPaid sends a callback to your callback url with transaction details. It contains status, address, currency, amount and fees.  If status is successful, you should deposit respective amount to customer balance on your side.
+3. When transaction is sent by a customer - AlphaPo sends a callback to your callback url with transaction details. It contains status, address, currency, amount and fees.  If status is successful, you should deposit respective amount to customer balance on your side.
 
 ### Withdrawal flow
 
 1. You request to send amount of money to address.
-2. Your request is validated on our side. If signature is correct, address is valid and you have enough balance - CoinsPaid responds you with the transaction object.
+2. Your request is validated on our side. If signature is correct, address is valid and you have enough balance - AlphaPo responds you with the transaction object.
 3. You will receive a callback when transaction status is updated.
 
 **Deposit with exchange flow**
 
-You don't want to touch or store cryptocurrency, but only use it as a payment method. Your customer deposits **BTC**, **\*\*Coinspaid instantly converts it to** EUR **so that** you would receive EUR on your CoinsPaid account.\*\*
+You don't want to touch or store cryptocurrency, but only use it as a payment method. Your customer deposits **BTC**, ****AlphaPo instantly converts it to **EUR** so that **you would receive EUR on your AlphaPo account**.
 
-1. You obtain new address from CoinsPaid API same as in deposit flow, but additionally pass another parameter "convert\_to" in your request specifying resulting currency.
-2. When new deposit is arriving, CoinsPaid converts all arriving funds to destination funds, and sends notifications as in regular deposit
+1. You obtain new address from AlphaPo API same as in deposit flow, but additionally pass another parameter "convert\_to" in your request specifying resulting currency.
+2. When new deposit is arriving, AlphaPo converts all arriving funds to destination funds, and sends notifications as in regular deposit
 
 **Withdrawal with exchange flow**
 
-You wish to send Cryptocurrency from your Fiat currency balance. For example you want to **send EUR amount** but your customer **receives** money **in BTC.**
+You wish to send Cryptocurrency from your Fiat currency balance. For example you want to **send EUR amount** but your customer receives ****money **in BTC.**
 
 1. You do exactly same as in withdrawals, but you specify 2 currencies. One is a currency of your **sending balance** and Second is a **cryptocurrency your Customer wishes to receive**.
-2. Your request is validated on our side. If signature is correct, address is valid and you have enough balance - CoinsPaid responds you with the transaction object.
+2. Your request is validated on our side. If signature is correct, address is valid and you have enough balance - AlphaPo responds you with the transaction object.
 3. You will receive a callback when transaction status is updated.
 
 **Futures flow**
@@ -48,33 +48,90 @@ In order to guarantee receiving amount, rates should be fixed.
 1. You send address for exchange \(If it is not necessary to receive exchange rates you can skip this step\)
 2. You receive rates and their fixation time 
 3. To confirm futures You have to send exchange pair and amount due. 
-4. When new deposit is arriving, CoinsPaid converts all arriving funds to destination funds, and sends notifications as in regular deposit.
+4. When new deposit is arriving, AlphaPo converts all arriving funds to destination funds, and sends notifications as in regular deposit.
 
-In case if received and sent amounts don't equal, CP converts it like normal deposit with exchange.
+In case if received and sent amounts don't equal, AlphaPo converts it like normal deposit with exchange.
 
 Limit for this operation is 10 000 EUR**.**
 
-### **Invoice flow**
-
-This feature provides an opportunity to make out an invoice for a B2B or B2C client to a specified amount. Detailed information can be found [here](invoices.md).
-
 ## API Endpoints
 
-{% api-method method="get" host="https://app.coinspaid.com/api" path="/v2/ping" %}
+{% api-method method="get" host="https://app.alphapo.net/api" path="/v2/ping" %}
+{% api-method-summary %}
+Ping
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Test if API is up and running and your authorization is working
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 {% hint style="info" %}
 Body must be a valid json object or array, example: {}
 {% endhint %}
 
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/currencies/list" %}
-
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/currencies/pairs" %}
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/currencies/list" %}
 {% api-method-summary %}
-
+Get list of supported currencies
 {% endapi-method-summary %}
 
 {% api-method-description %}
+Get all supported currencies
+{% endapi-method-description %}
 
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+  "data": [
+    {
+      "id": 1,
+      "type": "crypto",
+      "currency": "BTC",
+      "minimum_amount": "0.001",
+      "deposit_fee_percent": "0.99",
+      "withdrawal_fee_percent": "0",
+      "precision": 8
+    }
+  ]
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/currencies/pairs" %}
+{% api-method-summary %}
+Get list of exchangable currency pairs
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Get list of currency pairs if no parameters passed.  
+Get particular pair and its price if currency parameters are passed.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -169,6 +226,55 @@ Example of response with errors
         "currency_from": "The selected currency from is invalid.",
         "currency_to": "The selected currency to is invalid."
     }
+}Teg
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/accounts/list" %}
+{% api-method-summary %}
+Get list of balances
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Get list of all the balances \(including zero balances\).
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "data": [
+        {
+            "currency": "DOGE",
+            "type": "crypto",
+            "balance": "13234.91276375"
+        },
+        {    
+            "currency": "ADA",
+            "type": "crypto",
+            "balance": "7272.36400468"
+        },
+        {
+            "currency": "EUR",
+            "type": "fiat",
+            "balance": "5973.97568920"
+        },
+        {
+            "currency": "USDT",
+            "type": "crypto",
+            "balance": "0.00000000"
+        }
+    ]
 }
 ```
 {% endapi-method-response-example %}
@@ -176,11 +282,9 @@ Example of response with errors
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/accounts/list" %}
-
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/addresses/take" %}
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/addresses/take" %}
 {% api-method-summary %}
-
+Receive cryptocurrency
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -243,7 +347,7 @@ Example of response with errors
 
 {% hint style="info" %}
 Business logic for using cryptocurrency as a deposit method:  
-You are willing to let your customer fund his EUR balance on your platform or website. You will have to generate an address in the desired cryptocurrency and specify EUR as a "convert\_to" currency. This will allow you to let your Customer pay if his favorite currency and fund his balance in EUR. At the same time you will see respective EUR amount in your CoinsPaid merchant account.  
+You are willing to let your customer fund his EUR balance on your platform or website. You will have to generate an address in the desired cryptocurrency and specify EUR as a "convert\_to" currency. This will allow you to let your Customer pay if his favorite currency and fund his balance in EUR. At the same time you will see respective EUR amount in your AlphaPo merchant account.  
 **Hint:** you don't have to generate new address for this customer anymore, address can be reused unlimited amount of times.
 {% endhint %}
 
@@ -253,7 +357,7 @@ You are willing to let your customer fund his EUR balance on your platform or we
 * We do recommend making this QR clickable as customers may have a wallet set up on their computer or mobile phone.
 * We recommend specifying approximate current exchange rate.
 
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/withdrawal/crypto" %}
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/withdrawal/crypto" %}
 {% api-method-summary %}
 Withdraw cryptocurrency
 {% endapi-method-summary %}
@@ -283,10 +387,6 @@ If you want to auto convert for example EUR to BTC, specify this param as **BTC*
 
 {% api-method-parameter name="address" type="string" required=true %}
 Cryptocurrency address where you want to send funds.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="tag" type="string" required=false %}
-Tag \(if it's Ripple or BNB\) or memo \(if it's Bitshares or EOS\)
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -341,7 +441,7 @@ Your customer requests a payout in Cryptocurrency from his EUR balance on your p
 Example of such request &lt;_Send 3500 EUR to Bitcoin 3D2V3tushw7VLJYnK6vZVDpNcNmEG2a7QK_"&gt;.
 {% endhint %}
 
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/exchange/calculate" %}
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/exchange/calculate" %}
 {% api-method-summary %}
 Calculate exchange rates
 {% endapi-method-summary %}
@@ -412,7 +512,7 @@ Example of response with errors
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/exchange/fixed" %}
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/exchange/fixed" %}
 {% api-method-summary %}
 Exchange on fixed exchange rate
 {% endapi-method-summary %}
@@ -474,7 +574,7 @@ Example of success response
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/exchange/now" %}
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/exchange/now" %}
 {% api-method-summary %}
 Exchange regardless the exchange rate
 {% endapi-method-summary %}
@@ -546,7 +646,7 @@ Example of response with errors
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/futures/rates" %}
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/futures/rates" %}
 {% api-method-summary %}
 Calculate rates for futures
 {% endapi-method-summary %}
@@ -618,7 +718,7 @@ Example of response with errors
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://app.coinspaid.com/api" path="/v2/futures/confirm" %}
+{% api-method method="post" host="https://app.alphapo.net/api" path="/v2/futures/confirm" %}
 {% api-method-summary %}
 Confirm futures transaction
 {% endapi-method-summary %}
@@ -716,7 +816,7 @@ Example of response with errors
 
 ## Deposit Callbacks
 
-To provide authentication for the callback, coinspaid API signs the POST your api key and secret:
+To provide authentication for the callback, AlphaPo API signs the POST your api key and secret:
 
 1. **X-Processing-Key** – Your public key
 2. **X-Processing-Signature** – POST body, signed by the your secret key HMAC-SHA512
@@ -814,58 +914,6 @@ To provide authentication for the callback, coinspaid API signs the POST your ap
             "type": "deposit",
             "currency": "ETH",
             "amount": "0.00050000"
-        }
-    ],
-    "error": "",
-    "status": "confirmed"
-}
-```
-{% endtab %}
-
-{% tab title="ERC20" %}
-```text
-{
-    "id": 2686567,
-    "type": "deposit",
-    "crypto_address": {
-        "id": 382357,
-        "currency": "NNM",
-        "address": "0x19722627885da3fff134dd36de0a14898c8e053b",
-        "tag": null,
-        "foreign_id": "31"
-    },
-    "currency_sent": {
-        "currency": "NNM",
-        "amount": "0.06000000"
-    },
-    "currency_received": {
-        "currency": "NNM",
-        "amount": "0.06000000",
-        "amount_minus_fee": "0.05910000"
-    },
-    "transactions": [
-        {
-            "id": 714662,
-            "currency": "NNM",
-            "transaction_type": "blockchain",
-            "type": "deposit",
-            "address": "0x19722627885da3fff134dd36de0a14898c8e053b",
-            "tag": null,
-            "amount": "0.06000000",
-            "txid": "0x835c9f286a311bc9df8c94c2771cadf1d91e6967039358a44e24c56115dc59a1",
-            "confirmations": "7"
-          }
-    ],
-    "fees": [
-        {
-            "type": "transfer",
-            "currency": "ETH",
-            "amount": "0.00037336"
-        },
-        {
-            "type": "deposit",
-            "currency": "NNM",
-            "amount": "0.00090000"
         }
     ],
     "error": "",
@@ -1034,57 +1082,6 @@ To provide authentication for the callback, coinspaid API signs the POST your ap
             "type": "withdrawal",
             "currency": "ETH",
             "amount": "0.00010000"
-        }
-    ],
-    "error": "",
-    "status": "confirmed"
-}
-```
-{% endtab %}
-
-{% tab title="ERC20" %}
-```text
-{
-    "id": 2686572,
-    "foreign_id": "5",
-    "type": "withdrawal",
-    "crypto_address": {
-        "id": 381734,
-        "currency": "NNM",
-        "address": "0x2D6CA312567986C08CC4eF3F706136D1c9eF0321",
-        "tag": null
-    },
-    "currency_sent": {
-        "currency": "NNM",
-        "amount": "4.45600000"
-    },
-    "currency_received": {
-        "currency": "NNM",
-        "amount": "4.45600000"
-    },
-    "transactions": [
-        {
-            "id": 714670,
-            "currency": "NNM",
-            "transaction_type": "blockchain",
-            "type": "withdrawal",
-            "address": "0x2D6CA312567986C08CC4eF3F706136D1c9eF0321",
-            "tag": null,
-            "amount": "4.45600000",
-            "txid": "0x884ad10cc60dfe0d6fdc776b541c5c5efce6151886a88994bb4ba41aa9575563",
-            "confirmations": "0"
-        }
-    ],
-    "fees": [
-        {
-            "type": "mining",
-            "currency": "ETH",
-            "amount": "0.00007480"
-        },
-        {
-            "type": "withdrawal",
-            "currency": "NNM",
-            "amount": "0.04456000"
         }
     ],
     "error": "",

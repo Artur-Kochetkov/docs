@@ -4,11 +4,11 @@
 
 When we are talking about cryptocurrencies as a payment method, we should keep in mind that its payment workflow differs from classic payment methods like bank cards or e-wallets. As a result, when a client is using this payment method in a web-service or application, they should know some tips on how to make the payment process comfortable and simple.
 
-In this section we would like to share our knowledge of how to work with cryptocurrencies efficiently. We will also describe the most important information about implementation scenarios of Coinspaid API.
+In this section we would like to share our knowledge of how to work with cryptocurrencies efficiently. We will also describe the most important information about implementation scenarios of AlphaPo API.
 
 ## Deposits
 
-Crypto deposits are similar to bank transfers. If the recipient’s bank account number is known then the funds can be directly sent at any time. This approach differs from classic payment methods because the transaction cannot be created before the funds have appeared in the bank account. The same way web-services cannot expect that crypto deposit transactions will be initiated from the "payment form" every time because, in general, there is no such term for cryptocurrencies. Unlike the classical approach, web-services should handle callbacks from payment providers with information about received deposits. When web-services receive the first callback they then _\*\*_create the transaction. After the transaction will be confirmed by the payment provider the second callback will inform the web-services about the status of the transaction. Then, web-services can provide the user with a specific service.
+Crypto deposits are similar to bank transfers. If the recipient’s bank account number is known then the funds can be directly sent at any time. This approach differs from classic payment methods because the transaction cannot be created before the funds have appeared in the bank account. The same way web-services cannot expect that crypto deposit transactions will be initiated from the "payment form" every time because, in general, there is no such term for cryptocurrencies. Unlike the classical approach, web-services should handle callbacks from payment providers with information about received deposits. When web-services receive the first callback they then create the transaction. After the transaction will be confirmed by the payment provider the second callback will inform the web-services about the status of the transaction. Then, web-services can provide the user with a specific service.
 
 {% hint style="warning" %}
 #### Attention!
@@ -24,12 +24,12 @@ Even if you show the users new addresses every time, they can always make the de
 
 ### Common deposit workflow
 
-The most common _\*\*_scenario for receiving cryptocurrency is "deposit with exchange". Coinspaid provides web-services with on-the-fly exchange solution. It means that all funds that were received from the users can be automatically converted into fiat currencies in order to avoid cryptocurrency fluctuations and exchange rate inconsistencies.
+The most common scenario for receiving cryptocurrency is "deposit with exchange". AlphaPo provides web-services with on-the-fly exchange solution. It means that all funds that were received from the users can be automatically converted into fiat currencies in order to avoid cryptocurrency fluctuations and exchange rate inconsistencies.
 
 In case of regular deposits without exchange the workflow there will be the same but the conversion option will be skipped.
 
-> #### Algorithm
->
+#### Algorithm
+
 > 1. User has EUR balance on your site
 > 2. User uses some kind of “deposit” option on your site and chooses BTC as a payment method to use for the payment
 > 3. Website shows a deposit BTC address to the user
@@ -38,7 +38,7 @@ In case of regular deposits without exchange the workflow there will be the same
 > 6. You add the amount from the callback to user’s EUR balance
 
 {% hint style="danger" %}
-When you show a deposit address to a user, it is important to notify _\*\*_the user about exchange rates, deposit limits and the chosen cryptocurrency. Besides this you may want to warn the user that:
+When you show a deposit address to a user, it is important to notify the user about exchange rates, deposit limits and the chosen cryptocurrency. Besides this you may want to warn the user that:
 
 * all deposits below the limits or sent to incorrect addresses will be lost
 
@@ -58,18 +58,10 @@ In order to increase the conversion rate for crypto payments we have a special g
 {% hint style="info" %}
 #### Hint 1
 
-Usually our merchants generate all the needed crypto addresses at the time **\*\*when a new user is created. In order to do this you should use the** "/v2/addresses/take"\*\* method from our API.  
+Usually our merchants generate all the needed crypto addresses at the time **when a new user is created. In order to do this you should use the** "/v2/addresses/take" method from our API.  
 You can define what currency should be used for receiving the funds from the user and, if necessary, into what fiat currency received funds should be converted.
 
 In most cases it is useful to send us your user's ID as a **"foreign\_id"** parameter. We will link it to the address and send it in the callbacks. Using such a method you will be able to understand which user made the deposit.
-{% endhint %}
-
-{% hint style="warning" %}
-#### Attention
-
-Some cryptocurrencies require additional parameters to be defined when a user makes a deposit. For example, users have to input a value into the **"Memo"** field when they make a deposit from their wallet application using **XRP, BNB** or another cryptocurrency as the payment method.
-
-If it is necessary for a specific currency, we send the parameter **"tag"** in the response on **"/v2/addresses/take"** API call. If your system gets this parameter it has to show it's value to the user. In other cases received funds will be lost.
 {% endhint %}
 
 {% hint style="info" %}
@@ -99,7 +91,7 @@ To the opposite of deposits, sending cryptocurrencies to the users is similar to
 
 ### Common withdrawal workflow
 
-The most common scenario for sending crypto is "withdrawal with exchange". Coinspaid provides web-services with on-the-fly exchange solution. This means that the funds that are stored on a merchant's fiat balance can be automatically converted into cryptocurrencies before being sent to the user's crypto wallet.
+The most common scenario for sending crypto is "withdrawal with exchange". AlphaPo provides web-services with on-the-fly exchange solution. This means that the funds that are stored on a merchant's fiat balance can be automatically converted into cryptocurrencies before being sent to the user's crypto wallet.
 
 In case of regular withdrawals without exchange the workflow will be the same except of conversion operation.
 

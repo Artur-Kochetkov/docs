@@ -1,6 +1,6 @@
 # General description
 
-CoinsPaid is an organisation providing сryptocurrency payment services, we enable businesses to operate worldwide, decrease costs, reach new markets by empowering companies with reliable cryptocurrency processing methods. We support over 50 cryptocurrencies and counting.
+AlphaPo is an organisation providing сryptocurrency payment services, we enable businesses to operate worldwide, decrease costs, reach new markets by empowering companies with reliable cryptocurrency processing methods. 
 
 What makes us better than others?
 
@@ -20,30 +20,16 @@ Supported crypto currencies:
 * BTC - Bitcoin
 * LTC - Litecoin
 * BCH - Bitcoin cash
-* ADA - Cardano
 * ETH - Ethereum
-* ETC - Ethereum classic
-* DOGE - Dogecoin
-* NEO - Neo
-* XRP - Ripple
-* REP - Augur
-* USDT - Tether. Most popular "stablecoin", price fluctuating around 1 USD.
-* USDTE - Tether USD ERC20 token
-* EURTE - Tether EUR ERC20 token
-* ERC20 token\(s\) can be added by request
-* XIN - Infinity Economics
-* BNB - Binance Coin
-* BSV - Bitcoin SV
 
 Supported fiat currencies
 
-EUR, USD, CAD, SEK, AUD, NOK, CHF, RUB, CNY, JPY, NZD, MXN, ARS, BRL, GBP, INR, KRW, THB, MYR, PEN, CLP, KZT, UAH
+EUR, USD
 
 Available trading Pairs:
 
-* all fiat currencies with BTC, LTC, ETH, XRP and BCH
-* USDTE with BTC and EUR
-* LTC, ETH, BCH and DOGE with BTC
+* fiat currencies with BTC, LTC, ETH and BCH
+* LTC, ETH, BCH with BTC
 
-You can obtain all supported currency pairs via [api call](https://docs.coinspaid.com/docs/api-documentation/v2#get-list-of-exchangeable-currency-pairs).
+You can obtain all supported currency pairs via [api call](api-documentation/v2/#get-list-of-supported-currencies).
 
