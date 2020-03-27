@@ -8,5 +8,3 @@ Callback retry schedule:
 
 1, 5, 10, 15, 20, 30, 60, 90, 120, 150, 180, 210, 240 minutes.
 
-[API V2 callbacks specification](v2/#callbacks)
-
