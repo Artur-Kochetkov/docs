@@ -31,5 +31,5 @@ Available trading Pairs:
 * fiat currencies with BTC, LTC, ETH and BCH
 * LTC, ETH, BCH with BTC
 
-You can obtain all supported currency pairs via [api call](api-documentation/v2/#get-list-of-supported-currencies).
+You can obtain all supported currency pairs via api call.
 
