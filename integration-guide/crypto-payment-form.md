@@ -75,9 +75,10 @@ The more actions a user has to make the more probable it is that they will not p
 
 A QR code \(Quick Response code\) is a special visual method of data encoding and transferring that is usually used for simple and fast semi-automatic interaction with users' mobile devices. It can contain any text data, including URL links. When the user uses their phone to scan the QR code, the data inside the QR code will be decoded. If it is a link associated with a special application, the user's smartphone will react in a predefined way. For example, it can suggest to the user to follow the URL using a web browser or to send the funds using their crypto wallet application.
 
-An example of QR code:
+An example of QR code:  
 
-![](../.gitbook/assets/image-8.png)
+
+![](../.gitbook/assets/image%20%282%29.png)
 
 ## Why should I use QR codes on my payment form? <a id="QRcodeimplementation-WhyshouldIuseQRcodesonmypaymentform?"></a>
 
@@ -111,13 +112,13 @@ In order to create the QR code you can use Google Chart Service and encode the U
 To create simple QR codes including the link to the bitcoin address the following parameters should be used:  
 [https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=bitcoin:3AFaCnqriLNxj15kqtp5Pxn8puHfuqbX7W&choe=UTF-8](https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=bitcoin:3AFaCnqriLNxj15kqtp5Pxn8puHfuqbX7W&choe=UTF-8)
 
-You can use this link directly inside the &lt;img&gt; tag:
+You can use this link directly inside the &lt;img&gt; tag: 
 
 ```markup
 <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=bitcoin:3AFaCnqriLNxj15kqtp5Pxn8puHfuqbX7W&choe=UTF-8">
 ```
 
-![](https://github.com/Artur-Kochetkov/docs/tree/fb34eaa3b3c88b26e4a577fa3445b8e6e2cf118b/.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/new-qr.png)
 
 **chs** - QR code size \("150x150" size is used as an example\)  
 **cht** - chart type \(**"qr" is necessary for QR code**\)  
