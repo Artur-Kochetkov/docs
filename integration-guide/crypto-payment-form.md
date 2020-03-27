@@ -68,7 +68,7 @@ If the user has the crypto wallet application on the same device, they should:
 5. Click a "Send" button to transfer their funds
 
 {% hint style="danger" %}
-The more actions a user has to **make the more probable it is that they will not pay. That is why** the crypto address has to be presented at least as a clickable link using a specific URI format \(see the What is a crypto wallet URI format? section\).
+The more actions a user has to make the more probable it is that they will not pay. **That is why the crypto address has to be presented at least as a clickable link using a specific URI format** \(see the What is a crypto wallet URI format? section\).
 {% endhint %}
 
 ## What is a QR code? <a id="QRcodeimplementation-WhatisaQRcode?"></a>

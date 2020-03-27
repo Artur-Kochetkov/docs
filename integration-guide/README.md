@@ -58,7 +58,7 @@ In order to increase the conversion rate for crypto payments we have a special g
 {% hint style="info" %}
 #### Hint 1
 
-Usually our merchants generate all the needed crypto addresses at the time **when a new user is created. In order to do this you should use the** "/v2/addresses/take" method from our API.  
+Usually our merchants generate all the needed crypto addresses at the time ****when a new user is created. In order to do this you should use the ****"**/v2/addresses/take**" method from our API.  
 You can define what currency should be used for receiving the funds from the user and, if necessary, into what fiat currency received funds should be converted.
 
 In most cases it is useful to send us your user's ID as a **"foreign\_id"** parameter. We will link it to the address and send it in the callbacks. Using such a method you will be able to understand which user made the deposit.

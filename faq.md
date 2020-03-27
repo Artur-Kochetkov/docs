@@ -6,13 +6,7 @@ description: Advice and answers from the AlphaPo team
 
 ## **What is** AlphaPo**?**
 
-AlphaPo is a business service and software product created to solve topical problems connected with payments, cryptocurrency exchange and storage for both businesses and users. AlphaPo products include cryptocurrency processing and a personal wallet\*
-
-\*AlphaPo personal wallet will be released in Q2 2020
-
-## **Is** AlphaPo **registered as an electronic money institution?**
-
-We are not registered as a money or financial institution; moreover, we do not hold any specific licence. Our business model does not require it.
+AlphaPo is a business service and software product created to solve topical problems connected with payments, cryptocurrency exchange and storage for businesses.
 
 ## **How can I test your service?**
 
@@ -30,10 +24,6 @@ We can provide you with a trial account at AlphaPo, where you can familiarise yo
 
 Please apply by filling in the contact form on [alphapo.net](https://slack-redir.net/link?url=http%3A%2F%2Falphapo.net) or send an email to [sales@alphapo.net](mailto:sales@alphapo.net). Our managers will contact you as soon as possible.
 
-## **Does AlphaPo provide a personal account?**
-
-We are developing a personal account for users of our wallet, it is now in the testing phase of its development and we’ll announce it as soon as it’s ready.
-
 ## **How much does AlphaPo charge for its processing service?**
 
 Integration is free. We only charge transaction fees. Transaction types are: deposit, withdrawal and exchange, we also have transaction combinations, such as deposits with instant exchange.The fees depend on the required options and the merchant’s business model. Please apply at [sales@alphapo.net](mailto:sales@alphapo.net) for an individual commercial offer.
@@ -46,7 +36,7 @@ We are working on adding more currencies.
 
 ## **How can I convert all these different coins to BTC?**
 
-AlphaPo provides the opportunity for both merchants and their end-users to send and receive cryptocurrencies inside their account in AlphaPo, crediting the counter-party’s balance in the required coin. This option is available in manual mode for end-users and with the help of API for business.
+AlphaPo provides the opportunity for merchants to send and receive cryptocurrencies inside their account in AlphaPo, crediting the counter-party’s balance in the required coin. This option is available with the help of API for business.
 
 ## **Can I convert coins to EUR?**
 
