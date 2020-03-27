@@ -22,7 +22,7 @@ We can provide you with a trial account at AlphaPo, where you can familiarise yo
 
 ## **How do I get a business account with** AlphaPo**?**
 
-Please apply by filling in the contact form on [alphapo.net](https://slack-redir.net/link?url=http%3A%2F%2Falphapo.net) or send an email to [sales@alphapo.net](mailto:sales@alphapo.net). Our managers will contact you as soon as possible.
+Please apply by filling in the contact form on [alphapo.net](http://www.alphapo.net/) or send an email to [sales@alphapo.net](mailto:sales@alphapo.net). Our managers will contact you as soon as possible.
 
 ## **How much does AlphaPo charge for its processing service?**
 
