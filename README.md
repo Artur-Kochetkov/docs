@@ -21,15 +21,22 @@ Supported crypto currencies:
 * LTC - Litecoin
 * BCH - Bitcoin cash
 * ETH - Ethereum
+* DOGE - Dogecoin
+* DASH - Dash coin
+* ZEC - ZCash
+* USDC - USD Coin
+* USDTE - Tether USD ERC20 token
+* ERC20 token\(s\) can be added by request 
 
 Supported fiat currencies
 
-EUR, USD
+EUR, USD, CAD, SEK, AUD, NOK, CHF, RUB, CNY, JPY, NZD, MXN, ARS, BRL, GBP, INR, KRW, THB, MYR, PEN, CLP, KZT, UAH
 
 Available trading Pairs:
 
 * fiat currencies with BTC, LTC, ETH and BCH
-* LTC, ETH, BCH with BTC
+* LTC, ETH, BCH and DOGE with BTC
+* USDTE with BTC, LTC, BCH, ETH and EUR
 
 You can obtain all supported currency pairs via api call.
 

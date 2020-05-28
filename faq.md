@@ -30,7 +30,7 @@ Integration is free. We only charge transaction fees. Transaction types are: dep
 
 ## **What alternative payments do you support?**
 
-At the moment we accept several altcoins \(BTC, BCH, LTC, ETH\). 
+At the moment we accept several altcoins \(BTC, BCH, LTC, ETH, USDC, DOGE, DASH\) and ERC20 tokens. 
 
 We are working on adding more currencies.
 
