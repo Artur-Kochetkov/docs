@@ -805,6 +805,14 @@ Example of response with errors
 | not\_confirmed | Transaction is not yet confirmed. |
 | cancelled | **Final**. This transaction is a double spend or cancelled withdrawal. Pay attention to this transaction. |
 
+## "transaction\_type" parameter values
+
+| Type | Description |
+| :--- | :--- |
+| Blockchain | Type of transactions that are written into blockchain. Such transactions \(deposits and withdrawals\) can be tracked via according explorer for suitable blockchain. This is the most common type of transactions. |
+| Internal | Type of transactions between two addresses within our processing \(between separate merchant accounts or different addresses of the single merchant\). Such transactions are not written in blockchain, but still can be tracked via our internal explorer. |
+| Exchange | Type of transactions that requires exchange between crypto-fiat or crypto-crypto pairs. |
+
 ## Transitions
 
 | Transaction | Transition |
