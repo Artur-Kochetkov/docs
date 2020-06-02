@@ -12,6 +12,9 @@ Please note that **min limits** for exchange operations must be **obtained via A
 | BCH | 0/6 | 0.001 | 0.001 | [explorer](https://explorer.bitcoin.com/bch) |
 | LTC | 6 | 0.01 | 0.01 | [explorer](https://live.blockcypher.com/ltc/) |
 | ETH | 25 | 0.01 | 0.01 | [explorer](http://etherscan.io/) |
+| DOGE | 6 | 0.01 | 0.01 | [explorer](https://live.blockcypher.com/doge/) |
+| ETC | 25 | 0.01 | 0.01 | [explorer](https://gastracker.io/) |
+| ERC20 | 10 | 0.01 | 0.01 | [explorer](http://etherscan.io/) |
 
 {% hint style="info" %}
 Number of confirmations can be more than value in table in cases when several blocks are released in a short period of time.
